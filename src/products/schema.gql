@@ -1,0 +1,25 @@
+scalar Date
+type Product{
+    idProduct: ID!
+    name: String!
+    quantity: Int!  
+    price: Int! 
+    date: Date! 
+    offer: Boolean!
+    offerPorcentaje: Int!
+    active: Boolean!
+}
+
+type Query {
+    products: [Product!]
+}
+
+input NewProduct{
+    name: String!
+    quantity: Int!  
+    price: Int!
+}
+
+type Mutation{
+    createProduct(input: NewProduct!): Product!
+}

@@ -1,14 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
-import { User } from 'src/entity/user.entity';
+import { Resolver, Query } from '@nestjs/graphql';
 import { Wishlist } from 'src/entity/wishlist.entity';
 import { WishlistService } from './wishlist.service';
 
-@Controller('wishlist')
-export class WishlistController {
+@Resolver('wishlist')
+export class WishlistResolver {
     constructor(private readonly wishlistService: WishlistService){}
 
-    @Get()
-    getHello(): Promise<Wishlist[]> {
+    @Query()
+    wishlists(){
     return this.wishlistService.findAll();
     }
 }

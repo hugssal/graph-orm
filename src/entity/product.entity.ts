@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeor
 @Entity('products')
 export class Product {
   @PrimaryGeneratedColumn()
-  idPproduct: number;
+  idProduct: number;
 
   @Column()
   name: string;
@@ -20,7 +20,7 @@ export class Product {
   @Column({default: false})
   offer: boolean;
 
-  @Column()
+  @Column({default: 0})
   offerPorcentaje: number;
 
   @Column({default: true})
