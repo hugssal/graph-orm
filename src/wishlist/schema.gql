@@ -7,12 +7,16 @@ type Wishlist{
 }
 
 type Query {
-    wishlists: [Wishlist!]
+    wishlist (id: Int!): [Wishlist!]
 }
 
 input NewWishlist{
-     idProduct: Int!
+    idProduct: Int!
     idCliente: Int!
+}
+
+type Mutation{
+    deleteWishlist(id: Int!): String!
 }
 
 type Mutation{

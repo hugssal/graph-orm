@@ -1,21 +1,15 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 
-@Entity('sales')
-export class Sale {
+@Entity('entry')
+export class Entry {
   @PrimaryGeneratedColumn()
-  idSale: number;
+  idEntry: number;
 
   @Column()
   idProduct: number;
 
   @Column()
   quantity: number;
-
-  @Column()
-  idClient: number;
-
-  @Column()
-  idSeller: number;
 
   @CreateDateColumn({type: 'timestamp'})
   date: Date;

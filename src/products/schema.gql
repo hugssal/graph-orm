@@ -2,7 +2,6 @@ scalar Date
 type Product{
     idProduct: ID!
     name: String!
-    quantity: Int!  
     price: Int! 
     date: Date! 
     offer: Boolean!
@@ -14,12 +13,29 @@ type Query {
     products: [Product!]
 }
 
+type Query {
+    product (id: Int!): Product!
+}
+
 input NewProduct{
-    name: String!
-    quantity: Int!  
+    name: String! 
     price: Int!
 }
 
 type Mutation{
     createProduct(input: NewProduct!): Product!
+}
+
+type Mutation{
+    deleteProduct(id: Int!): Product!
+}
+
+input UpdatePro{
+    id: Int!
+    name: String
+    price: Int
+}
+
+type Mutation{
+    updateProduct(input: UpdatePro): Product!
 }

@@ -5,6 +5,7 @@ import { SalesModule } from './sales/sales.module';
 import { UsersModule } from './users/users.module';
 import { WishlistModule } from './wishlist/wishlist.module';
 import { GraphQLModule } from '@nestjs/graphql';
+import { InventoryModule } from './Inventory/inventory.module';
 
 
 @Module({
@@ -14,6 +15,7 @@ import { GraphQLModule } from '@nestjs/graphql';
     ProductsModule, 
     SalesModule, 
     WishlistModule,
+    InventoryModule,
     GraphQLModule.forRoot({
       typePaths: ['./**/*.gql']
     })

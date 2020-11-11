@@ -12,6 +12,10 @@ type Query {
     sales: [Sale!]
 }
 
+type Query {
+    sale (id:Int!): Sale!
+}
+
 input NewSale{
     idProduct: Int!
     quantity: Int!  
@@ -21,4 +25,13 @@ input NewSale{
 
 type Mutation{
     createSale(input: NewSale!): Sale!
+}
+
+input UpdateSa{
+    id: Int!
+    idSeller: Int!
+}
+
+type Mutation{
+    updateSale(input: UpdateSa): Sale!
 }

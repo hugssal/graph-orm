@@ -1,4 +1,5 @@
 scalar Date
+
 type User{
     idUser: ID!
     name: String!
@@ -13,6 +14,10 @@ type Query {
     users: [User!]
 }
 
+type Query {
+    user (id:Int!) : User!
+}
+
 input NewUser{
     name: String!
     firstName: String!  
@@ -22,4 +27,24 @@ input NewUser{
 
 type Mutation{
     createUser(input: NewUser!): User!
+}
+
+type Mutation{
+    deleteUser(id: Int!): User!
+}
+
+input UpdateUs{
+    id: Int!
+    name: String
+    firstName: String
+    lastName: String
+    rolId: Int
+}
+
+type Mutation{
+    updateUser(input: UpdateUs): User!
+}
+
+type Mutation {
+    login(input: String!): String!
 }

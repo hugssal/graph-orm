@@ -1,26 +1,20 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 
-@Entity('products')
-export class Product {
+@Entity('roles')
+export class Roles {
   @PrimaryGeneratedColumn()
-  idProduct: number;
+  idRol: number;
 
   @Column()
   name: string;
 
   @Column()
-  price: number;
+  description: string;
 
   @CreateDateColumn({type: 'timestamp'})
   date: Date;
 
-  @Column({default: false})
-  offer: boolean;
-
-  @Column({default: 0})
-  offerPorcentaje: number;
-
   @Column({default: true})
-  active: boolean;
+  active: boolean
 
 }

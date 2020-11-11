@@ -1,0 +1,12 @@
+scalar Date
+type Inventory{
+    idProduct: Int!
+    name: String!
+    in: Int!
+    sale: Int!
+    exist: Int!
+}
+
+type Query {
+    inventory: [Inventory!]
+}
